@@ -1,0 +1,23 @@
+What is a Single Page Application?
+
+Modern Web Applications are also called Single Page Applications. What does this mean?
+
+In the past, when browsers were much less capable than today, and JavaScript performance was poor, every page was coming from a server. Every time you clicked something, a new request was made to the server and the browser subsequently loaded the new page.
+
+Only very innovative products worked differently, and experimented with new approaches.
+
+Today, popularized by modern frontend JavaScript frameworks like React, an app is usually built as a single page application: you only load the application code (HTML, CSS, JavaScript) once, and when you interact with the application, what generally happens is that JavaScript intercepts the browser events and instead of making a new request to the server that then returns a new document, the client requests some JSON or performs an action on the server but the page that the user sees is never completely wiped away, and behaves more like a desktop application.
+
+Single page applications are built in JavaScript (or at least compiled to JavaScript) and work in the browser.
+
+The technology is always the same, but the philosophy and some key components of how the application works are different.
+
+Examples of Single Page Applications
+
+Some notable examples:
+
+*Gmail
+*Google Maps
+*Facebook
+*Twitter
+*Google Drive
