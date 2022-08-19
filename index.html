@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function update() {
+            var fsize = document.getElementById('fsize');
+            var fsinput = document.getElementById('fsinput').value;
+            var text = document.getElementById('text');
+            var tinput = document.getElementById('tinput').value;
+            var cinput = document.getElementById('cinput').value;
+            fsize.innerHTML = fsinput + "px";
+            text.innerHTML = tinput;
+            text.style = "font-size: " + fsinput + "px;" + "color:" + cinput +";";
+            document.getElementById("output").innerHTML = "font-size: " + fsinput + "px; " + "color:" + cinput +";";
+        }
+    </script>
+
+    <style>
+        #output {
+            color: #fff;
+            background-color: black;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <input type="range" min="1" max="1000" value="10" oninput="update()" id="fsinput">
+    <span id="fsize">10px</span>
+    <br>
+    <input type="text" oninput="update()" id="tinput" value="Your text here">&nbsp;
+    Color: <input type="text" oninput="update()" id="cinput" value="#000000">
+    <p>Your text CSS: <span id="output">font-size: 10px; color: #000000;</span></p>
+    <span style="font-size: 10px;" id="text">Your text here</span>
+</body>
+</html>
