@@ -6,98 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        function startUp() {
-            const colorPicker = document.querySelector("#cpicker");
-            colorPicker.addEventListener('change', (event) => {
-                var cinput = document.getElementById('cinput');
-                var cpicker = document.getElementById('cpicker');
-                cinput.value = event.target.value;
-                update();
-            });
-
-            const shadow = document.querySelector("#shadow");
-            shadow.addEventListener('change', (event) => {
-                var sinput = document.getElementById('sinput');
-                if (shadow.checked == true) {
-                    sinput.innerHTML = ('<br><blockquote>h-shadow: <input oninput="update()" id="hs-input" type="range" min="-50" max="50" value="0"><span id="hs-value">0px</span><br>v-shadow:  <input id="vs-input" oninput="update()" type="range" min="-50" max="50" value="0"><span id="vs-value">0px</span><br>blur-radius: <input oninput="update()" id="blur-input" type="range" min="0" max="20" value="0"><span id="blur-value">0px</span><br>Shadow color: <input id="sc-input" type="text" oninput="update()" value="#000000"></blockquote>');
-                } else {
-                    sinput.innerHTML = '';
-                }
-                update();
-            });
-
-            const s_color = document.querySelector("#sc-picker");
-            s_color.addEventListener('change', (event) => {
-                var s_colorInput = document.getElementById('sc-input');
-                var s_colorPicker = document.getElementById('sc-picker');
-                s_colorInput.value = event.target.value;
-                update();
-            });
-        }
-        function update() {
-            var fsize = document.getElementById('fsize');
-            var text = document.getElementById('text');
-            var fsinput = document.getElementById('fsinput').value;
-            var tinput = document.getElementById('tinput').value;
-            var cinput = document.getElementById('cinput').value;
-
-            fsize.innerHTML = text.style.fontSize;
-            text.innerHTML = tinput;
-            text.style.fontSize = fsinput + "px";
-            text.style.color = cinput;
-            document.getElementById("output").innerHTML = "font-size: " + fsinput + "px;<br>" + "color: " + cinput + ";<br>";
-            if (shadow.checked == true) {
-                var hs_value = document.getElementById("hs-input").value;
-                var vs_value = document.getElementById("vs-input").value;
-                var blur_radius = document.getElementById("blur-input").value;
-                var sc_input = document.getElementById("sc-input").value;
-                
-                document.getElementById("hs-value").innerHTML = hs_value + "px";
-                document.getElementById("vs-value").innerHTML = vs_value + "px";
-                document.getElementById("blur-value").innerHTML = blur_radius + "px";
-
-                document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "text-shadow: " + hs_value + " " + vs_value + " " + blur_radius + " " + sc_input + ";";
-                text.style.textShadow = sc_input + " " + hs_value + "px " + vs_value + "px " + blur_radius + "px";
-            } else {
-                text.style.textShadow = null;
-            }
-        }
-        window.onload = startUp;
-    </script>
-
-    <style>
-        #output {
-            color: #fff;
-            background-color: black;
-            padding: 2px;
-            display: inline-block;
-        }
-
-        .preview {
-            width: 50%;
-            height: 100px;
-            margin: 20px;
-            border: 2px solid black;
-            overflow-x: hidden;
-            overflow-y: hidden;
-        }
-    </style>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
     <input type="text" oninput="update()" id="tinput" value="Your text here">&nbsp;
-    Font-size: <input type="range" min="1" max="125" value="50" oninput="update()" id="fsinput">
+    Font-size: <input type="range" min="1" max="300" value="50" oninput="update()" id="fsinput">
     <span id="fsize">50px</span>
     <br>
 
     Color: <input type="text" oninput="update()" id="cinput" value="#000000">&nbsp;
-    <input type="color" id="cpicker" onchange="cpicker()" value="#000000">
+    <input type="color" id="cpicker" value="#000000">
     <br>
 
-    Shadow: <input type="checkbox" id="shadow" unchecked><span id="sinput"></span>
-
-    <p>Your text CSS</p><span id="output">font-size: 50px; <br>color: #000000;</span>
+    Shadow: <input type="checkbox" id="shadow" unchecked>
+    Decoration: <input type="checkbox" id="decoration" unchecked>
+    <span id="d-input" style="display: none;">:<label for="underline">underline</label><input type="checkbox" id="underline" unchecked></span>
+    <br>
+    <blockquote id="shadow-input" style="display: none;">
+        x distance: <input oninput="update()" id="hs-input" type="range" min="-50" max="50" value="0"><span id="hs-value">0px</span>
+        <br>
+        y distance:  <input id="vs-input" oninput="update()" type="range" min="-50" max="50" value="0"><span id="vs-value">0px</span>
+        <br>
+        blur radius: <input oninput="update()" id="blur-input" type="range" min="0" max="20" value="0"><span id="blur-value">0px</span>
+        <br>
+        opacity: <input oninput="update()" id="opacity-input" type="range" min="0" max="100" value="100"><span id="opacity-value">100%</span>
+        <br>
+        Shadow color: <input id="sc-input" type="text" oninput="update()" value="#000000"><input id="sc-picker" type="color" value="#000000">
+    </blockquote>
+    <p>Your text CSS</p><span id="output">font-size: 50px; <br>color: #000000; <br>text-decoration: none;</span>
 
     <div class="preview"><span style="font-size: 50px;" id="text">Your text here</span></div>
 </body>

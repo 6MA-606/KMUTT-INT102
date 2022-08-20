@@ -1,0 +1,15 @@
+#output {
+    color: #fff;
+    background-color: black;
+    padding: 2px;
+    display: inline-block;
+}
+
+.preview {
+    width: auto;
+    height: 300px;
+    margin: 20px;
+    border: 2px solid black;
+    overflow-x: auto;
+    overflow-y: auto;
+}
