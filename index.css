@@ -1,15 +1,71 @@
+label, #shadow-input span, #fsize{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="text"] {
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+input[type="color"] {
+    border: 0;
+    padding: 0px;
+    width: 25px;
+    height: 25px;
+    transform: translate(-37px, 4.5px);
+    background-color: white;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    transform: translate(-6px, 3px);
+}
+
+.tool-box {
+    margin: 2vh 0 0 5vw;
+}
+
+.css-terminal {
+    margin-left: 5vw;
+    background-color: rgb(212, 212, 212);
+    display: inline-block;
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.css-terminal-label {
+    padding: 10px;
+}
+
+.css-terminal-label span {
+    color: #505050;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #output {
     color: #fff;
-    background-color: black;
-    padding: 2px;
+    background-color: #505050;
+    padding: 10px;
     display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
 }
 
 .preview {
     width: auto;
     height: 300px;
-    margin: 20px;
-    border: 2px solid black;
+    margin: 2vh 5vw 0 5vw;
     overflow-x: auto;
     overflow-y: auto;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 2vmax;
+}
+
+#text {
+    font-family: Arial, Helvetica, sans-serif;
 }

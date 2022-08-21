@@ -5,37 +5,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CSS Generator</title>
     <script src="./index.js"></script>
     <link rel="stylesheet" href="./index.css">
 </head>
 
-<body>
-    <input type="text" oninput="update()" id="tinput" value="Your text here">&nbsp;
-    Font-size: <input type="range" min="1" max="300" value="50" oninput="update()" id="fsinput">
-    <span id="fsize">50px</span>
-    <br>
+<body style="background-color: rgb(240, 240, 240);">
 
-    Color: <input type="text" oninput="update()" id="cinput" value="#000000">&nbsp;
-    <input type="color" id="cpicker" value="#000000">
+    <div class="tool-box">
+        <input type="text" oninput="update()" id="tinput" value="Your text here">&nbsp;
+        <label for="fsinput">Font-size: </label>
+        <input type="range" min="1" max="125" value="50" oninput="update()" id="fsinput">
+        <span id="fsize">50px</span>
+        <br>
+            <label for="cinput">Color: </label>
+        <span class="color-input">
+            <input type="text" oninput="update()" id="cinput" value="#000000">&nbsp;
+            <input type="color" id="cpicker" value="#000000">
+        </span>
+        <br>
+        <label for="shadow">Shadow: </label><input type="checkbox" id="shadow" unchecked>
+        <blockquote id="shadow-input" style="display: none;">
+            <label for="hs-input">x distance: </label><input oninput="update()" id="hs-input" type="range" min="-50" max="50" value="0"><span id="hs-value">0px</span>
+            <br>
+            <label for="vs-input">y distance: </label><input oninput="update()" id="vs-input" type="range" min="-50" max="50" value="0"><span id="vs-value">0px</span>
+            <br>
+            <label for="blur-input">blur radius: </label><input oninput="update()" id="blur-input" type="range" min="0" max="20" value="0"><span id="blur-value">0px</span>
+            <br>
+            <label for="opacity-input">opacity: </label><input oninput="update()" id="opacity-input" type="range" min="0" max="100" value="100"><span id="opacity-value">100%</span>
+            <br>
+            <label for="sc-input">Shadow color: </label><input oninput="update()" id="sc-input" type="text"  value="#000000">&nbsp;&nbsp;<input id="sc-picker" type="color" value="#000000">
+        </blockquote>
+        <label for="decoration">Decoration: </label><input type="checkbox" id="decoration" unchecked>
+        <span id="d-input" style="display: none; position: absolute;">
+            <input type="checkbox" id="overline" unchecked><label for="overline">overline&nbsp;</label>
+            <!-- <input type="checkbox" id="line-through" unchecked><label for="line-through">line-through&nbsp;</label> -->
+            <br>
+            <input type="checkbox" id="underline" unchecked><label for="underline">underline&nbsp;</label>
+        </span>
+        <br>
+        <br>
+    </div>
     <br>
-
-    Shadow: <input type="checkbox" id="shadow" unchecked>
-    Decoration: <input type="checkbox" id="decoration" unchecked>
-    <span id="d-input" style="display: none;">:<label for="underline">underline</label><input type="checkbox" id="underline" unchecked></span>
-    <br>
-    <blockquote id="shadow-input" style="display: none;">
-        x distance: <input oninput="update()" id="hs-input" type="range" min="-50" max="50" value="0"><span id="hs-value">0px</span>
-        <br>
-        y distance:  <input id="vs-input" oninput="update()" type="range" min="-50" max="50" value="0"><span id="vs-value">0px</span>
-        <br>
-        blur radius: <input oninput="update()" id="blur-input" type="range" min="0" max="20" value="0"><span id="blur-value">0px</span>
-        <br>
-        opacity: <input oninput="update()" id="opacity-input" type="range" min="0" max="100" value="100"><span id="opacity-value">100%</span>
-        <br>
-        Shadow color: <input id="sc-input" type="text" oninput="update()" value="#000000"><input id="sc-picker" type="color" value="#000000">
-    </blockquote>
-    <p>Your text CSS</p><span id="output">font-size: 50px; <br>color: #000000; <br>text-decoration: none;</span>
+    <div class="css-terminal">
+        <div class="css-terminal-label">
+            <span style="text-align: left;">Your text CSS</span>
+        </div>
+        <div id="output">font-size: 50px; <br>color: #000000; <br>text-decoration: none;</div>
+    </div>
 
     <div class="preview"><span style="font-size: 50px;" id="text">Your text here</span></div>
 </body>

@@ -46,8 +46,18 @@ function startUp() {
         update();
     });
 
+    const overline = document.querySelector("#overline");
+    overline.addEventListener('change', () => {
+        update();
+    });
+
     const underline = document.querySelector("#underline");
     underline.addEventListener('change', () => {
+        update();
+    });
+
+    const line = document.querySelector("#line-through");
+    line.addEventListener('change', () => {
         update();
     });
 }
@@ -85,13 +95,21 @@ function update() {
         document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "text-decoration: none;";
         text.style.textDecoration = "none";
     } else {
+        var dec_style = "";
         if (underline.checked == true) {
-            document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "text-decoration: underline;";
-            text.style.textDecoration = "underline";
-        } else {
-            document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "text-decoration: none;";
-            text.style.textDecoration = "none";
+            dec_style += overline.checked == true ? "underline " : "underline";
         }
+        if (overline.checked == true) {
+            dec_style += "overline";
+        }
+        // if (line.checked == true) {
+        //     dec_style = dec_style + "line-through ";
+        // }
+        if (dec_style == "") {
+            dec_style = "none";
+        }
+        document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "text-decoration: " + dec_style + ";";
+        text.style.textDecoration = dec_style;
     }
 }
 window.onload = startUp;
