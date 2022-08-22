@@ -10,6 +10,25 @@ function decimalToHex(d, padding) {
 }
 
 function startUp() {
+
+    fontFamily = document.querySelector("#font-family-checkbox");
+    fontList = document.querySelector("#font-families-list");
+    cssOutput = document.getElementById("output");
+    fontFamily.addEventListener('change', () => {
+        fontList.disabled = fontFamily.checked ? false : true;
+        if (fontList.disabled) {
+            document.getElementById("css-font-family").innerHTML = "";
+        } else {
+            document.getElementById("css-font-family").innerHTML = "font-family: " + fontList.value + ";<br>";
+        }
+    });
+    fontList.addEventListener('change', () => {
+        if (fontFamily.checked) {
+            document.getElementById("css-font-family").innerHTML = "font-family: " + fontList.value + ";<br>";
+            document.getElementById("text").style.fontFamily = fontList.value;
+        }
+    });
+
     colorPicker = document.querySelector("#text-color-picker");
     colorPicker.addEventListener('change', (event) => {
         var cinput = document.getElementById('text-color-input');
@@ -73,7 +92,8 @@ function textUpdate() {
 
     colorPicker.value = cinput;
 
-    document.getElementById("output").innerHTML = "font-size: " + fsinput + "px;<br>" + "color: " + cinput + ";<br>";
+    document.getElementById("css-font-size").innerHTML = "font-size: " + fsinput + "px;<br>";
+    document.getElementById("css-color").innerHTML = "color: " + cinput + ";<br>";
     if (textShadow.checked) {
         var hs_value = document.getElementById("hs-input").value;
         var vs_value = document.getElementById("vs-input").value;
@@ -89,13 +109,14 @@ function textUpdate() {
         document.getElementById("blur-value").innerHTML = blur_radius + "px";
         document.getElementById("opacity-value").innerHTML = s_opacity + "%";
 
-        document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "text-shadow: " + hs_value + " " + vs_value + " " + blur_radius + " " + sc_input + hex_opacity + ";<br>";
+        document.getElementById("css-text-shadow").innerHTML = "text-shadow: " + hs_value + " " + vs_value + " " + blur_radius + " " + sc_input + hex_opacity + ";<br>";
         text.style.textShadow = sc_input + hex_opacity + " " + hs_value + "px " + vs_value + "px " + blur_radius + "px";
     } else {
+        document.getElementById("css-text-shadow").innerHTML = "";
         text.style.textShadow = null;
     }
     if (decoration.checked == false) {
-        document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "text-decoration: none;";
+        document.getElementById("css-text-decoration").innerHTML = "text-decoration: none;";
         text.style.textDecoration = "none";
     } else {
         var dec_style = "";
@@ -111,7 +132,7 @@ function textUpdate() {
         if (dec_style == "") {
             dec_style = "none";
         }
-        document.getElementById("output").innerHTML = document.getElementById("output").innerHTML + "text-decoration: " + dec_style + ";";
+        document.getElementById("css-text-decoration").innerHTML = "text-decoration: " + dec_style + ";";
         text.style.textDecoration = dec_style;
     }
 }
