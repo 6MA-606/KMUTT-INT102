@@ -10,76 +10,79 @@ function decimalToHex(d, padding) {
 }
 
 function startUp() {
-    const colorPicker = document.querySelector("#cpicker");
+    colorPicker = document.querySelector("#text-color-picker");
     colorPicker.addEventListener('change', (event) => {
-        var cinput = document.getElementById('cinput');
+        var cinput = document.getElementById('text-color-input');
         cinput.value = event.target.value;
-        update();
+        textUpdate();
     });
 
-    const shadow = document.querySelector("#shadow");
-    shadow.addEventListener('change', () => {
-        var s_input = document.getElementById('shadow-input');
-        if (shadow.checked == true) {
-            s_input.style.display = "block";
-        } else {
-            s_input.style.display = "none";
-        }
-        update();
+    textShadow = document.querySelector('#text-shadow-checkbox');
+    textShadow.addEventListener('change', () => {
+        var s_input = document.getElementById('text-shadow-ui');
+        s_input.style.display = textShadow.checked ? "block" : "none";
+        textUpdate();
     });
 
-    const s_color = document.querySelector("#sc-picker");
-    s_color.addEventListener('change', (event) => {
-        var s_colorInput = document.getElementById('sc-input');
+    shadowColorPicker = document.querySelector("#shadow-color-picker");
+    shadowColorPicker.addEventListener('change', (event) => {
+        var s_colorInput = document.getElementById('shadow-color-input');
         s_colorInput.value = event.target.value;
-        update();
+        textUpdate();
     });
 
-    const decoration = document.querySelector("#decoration");
+    decoration = document.querySelector("#text-decoration-checkbox");
     decoration.addEventListener('change', () => {
-        var d_input = document.getElementById('d-input');
-        if (decoration.checked == true) {
-            d_input.style.display = "inline";
-        } else {
-            d_input.style.display = "none";
-        }
-        update();
+        var d_input = document.getElementById('text-decoration-input');
+        d_input.style.display = decoration.checked ? "inline" : "none";
+        textUpdate();
     });
 
-    const overline = document.querySelector("#overline");
+    overline = document.querySelector("#overline-checkbox");
     overline.addEventListener('change', () => {
-        update();
+        textUpdate();
     });
 
-    const underline = document.querySelector("#underline");
+    underline = document.querySelector("#underline-checkbox");
     underline.addEventListener('change', () => {
-        update();
+        textUpdate();
     });
 
-    const line = document.querySelector("#line-through");
-    line.addEventListener('change', () => {
-        update();
+    lineThrough = document.querySelector("#line-through");
+    lineThrough.addEventListener('change', () => {
+        textUpdate();
+    });
+
+    previewBg = document.querySelector('#preview-bg');
+    previewBox = document.getElementById('preview-box');
+    previewBg.addEventListener('change', (event) => {
+        previewBox.style.backgroundColor = event.target.value;
     });
 }
-function update() {
-    var fsize = document.getElementById('fsize');
+function textUpdate() {
+    var fsize = document.getElementById('font-size');
     var text = document.getElementById('text');
-    var fsinput = document.getElementById('fsinput').value;
-    var tinput = document.getElementById('tinput').value;
-    var cinput = document.getElementById('cinput').value;
+    var fsinput = document.getElementById('font-size-input').value;
+    var tinput = document.getElementById('text-input').value;
+    var cinput = document.getElementById('text-color-input').value;
 
     fsize.innerHTML = text.style.fontSize;
     text.innerHTML = tinput;
     text.style.fontSize = fsinput + "px";
     text.style.color = cinput;
+
+    colorPicker.value = cinput;
+
     document.getElementById("output").innerHTML = "font-size: " + fsinput + "px;<br>" + "color: " + cinput + ";<br>";
-    if (shadow.checked == true) {
+    if (textShadow.checked) {
         var hs_value = document.getElementById("hs-input").value;
         var vs_value = document.getElementById("vs-input").value;
         var blur_radius = document.getElementById("blur-input").value;
-        var sc_input = document.getElementById("sc-input").value;
+        var sc_input = document.getElementById("shadow-color-input").value;
         var s_opacity = document.getElementById('opacity-input').value;
         var hex_opacity = decimalToHex(Math.ceil((255 / 100) * s_opacity), 2);
+
+        shadowColorPicker.value = sc_input;
 
         document.getElementById("hs-value").innerHTML = hs_value + "px";
         document.getElementById("vs-value").innerHTML = vs_value + "px";
@@ -97,14 +100,14 @@ function update() {
     } else {
         var dec_style = "";
         if (underline.checked == true) {
-            dec_style += overline.checked == true ? "underline " : "underline";
+            dec_style += overline.checked ? "underline " : "underline";
         }
         if (overline.checked == true) {
             dec_style += "overline";
         }
-        // if (line.checked == true) {
-        //     dec_style = dec_style + "line-through ";
-        // }
+        if (lineThrough.checked == true) {
+            dec_style += overline.checked || underline.checked ? " line-through" : "line-through";
+        }
         if (dec_style == "") {
             dec_style = "none";
         }

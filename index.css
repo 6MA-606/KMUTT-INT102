@@ -1,4 +1,4 @@
-label, #shadow-input span, #fsize{
+label, #text-shadow-ui span, #font-size{
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -30,7 +30,7 @@ input[type="checkbox"] {
 
 .css-terminal {
     margin-left: 5vw;
-    background-color: rgb(212, 212, 212);
+    background-color: #dddddd;
     display: inline-block;
     border-radius: 10px;
     overflow-x: hidden;
@@ -59,11 +59,20 @@ input[type="checkbox"] {
     width: auto;
     height: 300px;
     margin: 2vh 5vw 0 5vw;
-    overflow-x: auto;
-    overflow-y: auto;
+    overflow: auto;
     border-radius: 10px;
     background-color: #ffffff;
-    padding: 2vmax;
+}
+
+.preview-label {
+    padding: 10px;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #505050;
+}
+
+#preview-box {
+    padding: 20px;
 }
 
 #text {

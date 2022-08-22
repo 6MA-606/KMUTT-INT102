@@ -13,35 +13,44 @@
 <body style="background-color: rgb(240, 240, 240);">
 
     <div class="tool-box">
-        <input type="text" oninput="update()" id="tinput" value="Your text here">&nbsp;
-        <label for="fsinput">Font-size: </label>
-        <input type="range" min="1" max="125" value="50" oninput="update()" id="fsinput">
-        <span id="fsize">50px</span>
+        <input type="text" oninput="textUpdate()" id="text-input" value="Your text here">
         <br>
-            <label for="cinput">Color: </label>
-        <span class="color-input">
-            <input type="text" oninput="update()" id="cinput" value="#000000">&nbsp;
-            <input type="color" id="cpicker" value="#000000">
+        <br>
+        <label for="font-size-input">Font-size: </label>
+        <input type="range" min="0" max="125" value="50" oninput="textUpdate()" id="font-size-input">
+        <span id="font-size">50px</span>
+        <br>
+        <label for="font-familys">Font-family:</label>
+        <select name="font-familys" id="font-familys">
+            <option value="Arial, Helvetica, sans-serif">Arial</option>
+            <option value="'Courier New', Courier, monospace">Courier New</option>
+        </select>
+        <input type="checkbox" id="font-family-checkbox" checked>
+        <br>
+            <label for="text-color-input">Color: </label>
+        <span class="text-color-ui">
+            <input type="text" oninput="textUpdate()" id="text-color-input" value="#000000">&nbsp;
+            <input type="color" id="text-color-picker" value="#000000">
         </span>
         <br>
-        <label for="shadow">Shadow: </label><input type="checkbox" id="shadow" unchecked>
-        <blockquote id="shadow-input" style="display: none;">
-            <label for="hs-input">x distance: </label><input oninput="update()" id="hs-input" type="range" min="-50" max="50" value="0"><span id="hs-value">0px</span>
+        <label for="text-shadow-checkbox">Shadow: </label><input type="checkbox" id="text-shadow-checkbox" unchecked>
+        <blockquote id="text-shadow-ui" style="display: none;">
+            <label for="hs-input">x distance: </label><input oninput="textUpdate()" id="hs-input" type="range" min="-50" max="50" value="0"><span id="hs-value">0px</span>
             <br>
-            <label for="vs-input">y distance: </label><input oninput="update()" id="vs-input" type="range" min="-50" max="50" value="0"><span id="vs-value">0px</span>
+            <label for="vs-input">y distance: </label><input oninput="textUpdate()" id="vs-input" type="range" min="-50" max="50" value="0"><span id="vs-value">0px</span>
             <br>
-            <label for="blur-input">blur radius: </label><input oninput="update()" id="blur-input" type="range" min="0" max="20" value="0"><span id="blur-value">0px</span>
+            <label for="blur-input">blur radius: </label><input oninput="textUpdate()" id="blur-input" type="range" min="0" max="20" value="0"><span id="blur-value">0px</span>
             <br>
-            <label for="opacity-input">opacity: </label><input oninput="update()" id="opacity-input" type="range" min="0" max="100" value="100"><span id="opacity-value">100%</span>
+            <label for="opacity-input">opacity: </label><input oninput="textUpdate()" id="opacity-input" type="range" min="0" max="100" value="100"><span id="opacity-value">100%</span>
             <br>
-            <label for="sc-input">Shadow color: </label><input oninput="update()" id="sc-input" type="text"  value="#000000">&nbsp;&nbsp;<input id="sc-picker" type="color" value="#000000">
+            <label for="shadow-color-input">Shadow color: </label><input oninput="textUpdate()" id="shadow-color-input" type="text"  value="#000000">&nbsp;&nbsp;<input id="shadow-color-picker" type="color" value="#000000">
         </blockquote>
-        <label for="decoration">Decoration: </label><input type="checkbox" id="decoration" unchecked>
-        <span id="d-input" style="display: none; position: absolute;">
-            <input type="checkbox" id="overline" unchecked><label for="overline">overline&nbsp;</label>
-            <!-- <input type="checkbox" id="line-through" unchecked><label for="line-through">line-through&nbsp;</label> -->
+        <label for="text-decoration-checkbox">Decoration: </label><input type="checkbox" id="text-decoration-checkbox" unchecked>
+        <span id="text-decoration-input" style="display: none; position: absolute;">
+            <input type="checkbox" id="overline-checkbox" unchecked><label for="overline-checkbox">overline&nbsp;</label>
+            <input type="checkbox" id="line-through" unchecked><label for="line-through">line-through&nbsp;</label>
             <br>
-            <input type="checkbox" id="underline" unchecked><label for="underline">underline&nbsp;</label>
+            <input type="checkbox" id="underline-checkbox" unchecked><label for="underline-checkbox">underline&nbsp;</label>
         </span>
         <br>
         <br>
@@ -54,7 +63,13 @@
         <div id="output">font-size: 50px; <br>color: #000000; <br>text-decoration: none;</div>
     </div>
 
-    <div class="preview"><span style="font-size: 50px;" id="text">Your text here</span></div>
+    <div class="preview" style="overflow: hidden; background-color: #dddddd;">
+        <span class="preview-label">Preview</span>
+        <input id="preview-bg" type="color" value="#ffffff" style="transform: translate(-5px,4px); background-color: #dddddd;">
+        <div id="preview-box" style="background-color: white; width: 100%; height: 100%">
+            <span style="font-size: 50px;" id="text">Your text here</span>
+        </div>
+    </div>
 </body>
 
 </html>
