@@ -30,8 +30,10 @@ function startUp() {
     });
 
     colorPicker = document.querySelector("#text-color-picker");
-    colorPicker.addEventListener('change', (event) => {
+    customColorPicker = document.getElementById('custom-color-picker');
+    colorPicker.addEventListener('input', (event) => {
         var cinput = document.getElementById('text-color-input');
+        customColorPicker.style.backgroundColor = event.target.value
         cinput.value = event.target.value;
         textUpdate();
     });
@@ -44,8 +46,10 @@ function startUp() {
     });
 
     shadowColorPicker = document.querySelector("#shadow-color-picker");
-    shadowColorPicker.addEventListener('change', (event) => {
+    customShadowColorPicker = document.getElementById('custom-shadow-color-picker');
+    shadowColorPicker.addEventListener('input', (event) => {
         var s_colorInput = document.getElementById('shadow-color-input');
+        customShadowColorPicker.style.backgroundColor = event.target.value
         s_colorInput.value = event.target.value;
         textUpdate();
     });
@@ -73,8 +77,10 @@ function startUp() {
     });
 
     previewBg = document.querySelector('#preview-bg');
+    customPreviewBg = document.getElementById('custom-preview-bg');
     previewBox = document.getElementById('preview-box');
-    previewBg.addEventListener('change', (event) => {
+    previewBg.addEventListener('input', (event) => {
+        customPreviewBg.style.backgroundColor = event.target.value;
         previewBox.style.backgroundColor = event.target.value;
     });
 }
@@ -91,6 +97,7 @@ function textUpdate() {
     text.style.color = cinput;
 
     colorPicker.value = cinput;
+    customColorPicker.style.backgroundColor = cinput;
 
     document.getElementById("css-font-size").innerHTML = "font-size: " + fsinput + "px;<br>";
     document.getElementById("css-color").innerHTML = "color: " + cinput + ";<br>";
@@ -103,6 +110,7 @@ function textUpdate() {
         var hex_opacity = decimalToHex(Math.ceil((255 / 100) * s_opacity), 2);
 
         shadowColorPicker.value = sc_input;
+        customShadowColorPicker.style.backgroundColor = sc_input;
 
         document.getElementById("hs-value").innerHTML = hs_value + "px";
         document.getElementById("vs-value").innerHTML = vs_value + "px";
