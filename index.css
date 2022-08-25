@@ -1,3 +1,7 @@
+.tab {
+    tab-size: 4;
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr 5fr;
@@ -81,7 +85,7 @@ input[type="checkbox"] {
     margin: 2vh 0 0 1vw;
 }
 
-.css-terminal {
+.css-terminal, .html-terminal{
     margin-left: 1vw;
     background-color: #dddddd;
     display: inline-block;
@@ -90,11 +94,11 @@ input[type="checkbox"] {
     overflow-y: hidden;
 }
 
-.css-terminal-label {
+.terminal-label {
     padding: 10px;
 }
 
-.css-terminal-label span {
+.terminal-label span {
     color: #505050;
     font-family: Arial, Helvetica, sans-serif;
 }

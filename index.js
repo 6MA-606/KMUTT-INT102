@@ -11,7 +11,6 @@ function decimalToHex(d, padding) {
 
 function startUp() {
 
-
     function checkSize() {
         sidebar = document.querySelector('.sidebar');
         grid = document.querySelector('.grid');
@@ -101,6 +100,8 @@ function startUp() {
         customPreviewBg.style.backgroundColor = event.target.value;
         previewBox.style.backgroundColor = event.target.value;
     });
+
+    textUpdate();
 }
 function textUpdate() {
     var fsize = document.getElementById('font-size');
@@ -108,8 +109,10 @@ function textUpdate() {
     var fsinput = document.getElementById('font-size-input').value;
     var tinput = document.getElementById('text-input').value;
     var cinput = document.getElementById('text-color-input').value;
+    var html_span = document.getElementById('html-span');
 
     fsize.innerHTML = text.style.fontSize;
+    html_span.innerHTML = '&lt;span class="header-text"&gt;' + tinput + '&lt;/span&gt';
     text.innerHTML = tinput;
     text.style.fontSize = fsinput + "px";
     text.style.color = cinput;
@@ -142,7 +145,7 @@ function textUpdate() {
         text.style.textShadow = null;
     }
     if (decoration.checked == false) {
-        document.getElementById("css-text-decoration").innerHTML = "text-decoration: none;";
+        document.getElementById("css-text-decoration").innerHTML = "text-decoration: none;<br>";
         text.style.textDecoration = "none";
     } else {
         var dec_style = "";
@@ -158,7 +161,7 @@ function textUpdate() {
         if (dec_style == "") {
             dec_style = "none";
         }
-        document.getElementById("css-text-decoration").innerHTML = "text-decoration: " + dec_style + ";";
+        document.getElementById("css-text-decoration").innerHTML = "text-decoration: " + dec_style + ";<br>";
         text.style.textDecoration = dec_style;
     }
 }
