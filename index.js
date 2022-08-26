@@ -9,6 +9,13 @@ function decimalToHex(d, padding) {
     return hex;
 }
 
+function cssCopy() {
+    var copyText = document.getElementById("css-code");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+}
+
 function startUp() {
 
     function checkSize() {
@@ -29,7 +36,7 @@ function startUp() {
 
     fontFamily = document.querySelector("#font-family-checkbox");
     fontList = document.querySelector("#font-families-list");
-    cssOutput = document.getElementById("output");
+    cssOutput = document.getElementById("css-output");
     fontFamily.addEventListener('change', () => {
         fontList.disabled = fontFamily.checked ? false : true;
         if (fontList.disabled) {
@@ -59,6 +66,7 @@ function startUp() {
     textShadow.addEventListener('change', () => {
         var s_input = document.getElementById('text-shadow-ui');
         s_input.style.display = textShadow.checked ? "block" : "none";
+        document.getElementById('css-text-shadow').style.display = textShadow.checked ? "inline" : "none";
         textUpdate();
     });
 

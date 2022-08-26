@@ -1,7 +1,3 @@
-.tab {
-    tab-size: 4;
-}
-
 .grid {
     display: grid;
     grid-template-columns: 1fr 5fr;
@@ -103,7 +99,7 @@ input[type="checkbox"] {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#output {
+#css-output, #html-output {
     color: #fff;
     background-color: #505050;
     padding: 10px;
