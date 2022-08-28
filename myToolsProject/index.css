@@ -1,14 +1,15 @@
-.grid {
+/* body {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 0fr 1fr;
     justify-items: stretch;
     align-items: stretch;
     column-gap: 19px;
     row-gap: 19px;
-}
-
-.content {
+} */
+#content {
     border: 0;
+    transition: 0.5s;
+    margin-left: 100px;
 }
 
 .content-list {
