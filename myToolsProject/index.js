@@ -23,11 +23,11 @@ function startUp() {
         grid = document.querySelector('.grid');
         content = document.querySelector('.content');
         if (window.innerWidth <= 1230) {
-            sidebar.style.display = "none";
+            //sidebar.style.display = "none";
             grid.style.display = "block";
             content.style.margin = "0 4.5vw 0 4.5vw";
         } else {
-            sidebar.style.display = "block";
+            //sidebar.style.display = "block";
             grid.style.display = "grid";
         }
     }
