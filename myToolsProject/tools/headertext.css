@@ -87,7 +87,7 @@ input[type="checkbox"] {
 }
 
 .preview {
-    width: auto;
+    width: 70%;
     height: 300px;
     margin: 2vh 5vw 0 1vw;
     overflow: auto;
