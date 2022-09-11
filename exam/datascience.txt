@@ -1,0 +1,133 @@
+[index.html]---------------------------------------------------------------------------------------------
+What Is Data Science, and What Does a Data Scientist Do?
+
+Introduction
+
+What profession did Harvard call the Sexiest Job of the 21st Century? That’s right… the data scientist.
+
+Ah yes, the ever mysterious data scientist. So what exactly is the data scientist’s secret sauce, and what does this “sexy” person actually do at work every day?
+
+This article is intended to help define the data scientist role, including typical skills, qualifications, education, experience, and responsibilities. This definition is somewhat loose since there really isn’t a standardized definition of the data scientist role, and given that the ideal experience and skill set is relatively rare to find in one individual.
+
+This definition can be further confused by the fact that there are other roles sometimes thought of as the same, but are often quite different. Some of these include data analyst, data engineer, and so on. More on that later.
+
+Here is a diagram showing some of the common disciplines that a data scientist may draw upon. A data scientist’s level of experience and knowledge in each, often varies along a scale ranging from beginner, to proficient, and to expert, in the ideal case.
+
+[picture]
+
+While these, and other disciplines and areas of expertise (not shown here), are all characteristics of the data scientist role, I like to think of a data scientist’s foundation as being based on four pillars. Other more specific areas of expertise can be derived from these pillars.
+
+Let’s discuss them now.
+
+[The Pillars Of Data Science Expertise](pillars.html)
+
+
+
+
+
+
+[pillars.html]---------------------------------------------------------------------------------------------
+
+The Pillars Of Data Science Expertise
+
+While data scientists often come from many different educational and work experience backgrounds, most should be strong in, or in an ideal case be experts in four fundamental areas. In no particular order of priority or importance, these are:
+
+*Business/Domain
+
+*Mathematics (includes statistics and probability)
+
+*Computer science (e.g., software/data architecture and engineering)
+
+*Communication (both written and verbal)
+
+[picture1]
+
+There are other skills and expertise that are highly desirable as well, but these are the primary four in my opinion. These will be referred to as the data scientist pillars for the rest of this article.
+
+In reality, people are often strong in one or two of these pillars, but usually not equally strong in all four. If you do happen to meet a data scientist that is truly an expert in all, then you’ve essentially found yourself a unicorn.
+
+Based on these pillars, a data scientist is a person who should be able to leverage existing data sources, and create new ones as needed in order to extract meaningful information and actionable insights. These insights can be used to drive business decisions and changes intended to achieve business goals.
+
+This is done through business domain expertise, effective communication and results interpretation, and utilization of any and all relevant statistical techniques, programming languages, software packages and libraries, data infrastructure, and so on.
+
+[The Data Science Process](processes.html)
+
+
+
+
+
+[processes.html]---------------------------------------------------------------------------------------------
+
+The Data Science Process
+
+Below is a diagram of the GABDO Process Model that I created and introduce in my book, [AI for People and Business](www.aipbbook.com/?utm_campaign=crossref&utm_content=articlelink&utm_medium=article&utm_source=innoarchitech). Data scientists usually follow a process similar to this, especially when creating models using machine learning and related techniques.
+
+The GABDO Process Model consists of five iterative phases—goals, acquire, build, deliver, optimize—hence, represented by the acronym GABDO. Each phase is iterative because any phase can loop back to one or more phases before. Feel free to check out the [book](www.aipbbook.com/?utm_campaign=crossref&utm_content=articlelink&utm_medium=article&utm_source=innoarchitech) if you’d like to learn more about the process and its details.
+
++-----------+--------------------------+
+|  Process  |   Tasks                  |
++-----------+--------------------------+
+|           |   Idntify goals          |
+|   Goals   |   Identify opportunites  |
+|           |   Create hypothesis      |
++-----------+--------------------------+
+|           |   Identify data          |
+|   Acquire |   Acquire data           |
+|           |   Prepare data           |
++-----------+--------------------------+
+|           |   Explore                |
+|           |   Select                 |
+|   Build   |   Train, validate, test  |
+|           |   Improve                |
++-----------+--------------------------+
+|           |   Present insights       |
+|   Deliver |   Take action            |
+|           |   Make decision          |
+|           |   Deploy solutions       |
++-----------+--------------------------+
+|           |   Monitor                |
+|   Optimize|   Analyze                |
+|           |   Improve                |
++-----------+--------------------------+
+
+That’s the process in a nutshell.
+
+Summary
+
+Harvard was right about data scientists. It’s an extremely important and high-demand role that can have significant impact on a business’ ability to achieve its goals, whether they are financial, operational, strategic, and so on.
+
+Company’s collect a ton of data, and much of the time it’s neglected or underutilized. This data, through meaningful information extraction and discovery of actionable insights, can be used to make critical business decisions and drive significant business change. It can also be used to optimize customer success and subsequent acquisition, retention, and growth.
+
+As mentioned, data scientists can have a major positive impact on a business’ success, and sometimes inadvertently cause financial loss, which is one of the many reasons why hiring a top notch data scientist is critical.
+
+[Now, it is time to test your knowledge!](test.html)
+
+
+
+
+
+
+[test.html]---------------------------------------------------------------------------------------------
+Data Science Test
+There are three questions. Answer all questions and press Send.
+
+1.Which disclipline is not in Data Scientist?
+
+Data Engineering
+Visualization
+Statistics
+Computer Graphic
+
+2. Which skills and expertise should Data Scientists should have? (Choose all possible)
+
+Business/Domain
+Mathematics
+Computer Science
+Communication
+
+3.List Data Science process and show all tasks in each process.
+
+
+
+
+

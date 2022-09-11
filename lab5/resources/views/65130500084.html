@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Contest Entry Form</title>
+    <style type="text/css">
+        ol,
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>&ldquo;Pimp My Shoes&rdquo; Contest Entry Form</h1>
+
+    <p>
+        Want to trade in your old sneakers for a custom pair of Forcefields? Make a case for why your shoes have <em>got</em> to go and you may be one of ten lucky winners.
+    </p>
+
+    <!-- put the form element and form contols after here-->
+    <form action="/contest" method="POST">
+        <p>Contest Entry Information</p>
+
+        <ul>
+            <li>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name">
+            </li>
+            <li>
+                <label for="email">Email Address:</label>
+                <input type="email" name="email" id="email">
+            </li>
+            <li>
+                <label for="tel">Telephone Number:</label>
+                <input type="tel" name="phone" id="tel">
+            </li>
+            <li>
+                <label for="story">My shoes are SO old…</label>
+                <br>
+                <textarea name="story" id="story" cols="60" rows="4" placeholder="No more than 300 characters long"></textarea>
+            </li>
+        </ul>
+        <h2>Design your custom Forcefields:</h2>
+
+        <fieldset>
+            <legend>Custom Shoe Design</legend>
+
+            <fieldset>
+                <legend>Color <em>(choose one)</em>:</legend>
+                <ul>
+                    <li>
+                        <input type="radio" name="color" id="color_1" value="red">
+                        <label for="color_1">Red</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="color" id="color_2" value="blue">
+                        <label for="color_2">Blue</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="color" id="color_3" value="black">
+                        <label for="color_3">Black</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="color" id="color_4" value="silver">
+                        <label for="color_4">Silver</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>Features <em>(Choose as many as you want)</em></legend>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="feature" id="feature_1" value="laces">
+                        <label for="feature_1">Sparkley laces</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="feature" id="feature_2" value="logo" checked>
+                        <label for="feature_2">Metallic logo</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="feature" id="feature_3" value="heels">
+                        <label for="feature_3">Light-up heels</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="feature" id="feature_4" value="mp3">
+                        <label for="feature_4">MP3-enabled</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>Size</legend>
+                <p><label for="size">Sizes reflect standard men's sizes:</label>
+                    <select name="size" id="size">
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                    </select>
+                </p>
+            </fieldset>
+        </fieldset>
+        <p>
+            <input type="submit" value="Pimp my shoes!">
+            <input type="reset" value="Reset">
+        </p>
+    </form>
+    <!-- this is the end of form element before this comment-->
+</body>
+
+</html>
