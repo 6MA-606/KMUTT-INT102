@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title> </title>
+		<title>Data Science Test</title>
         <style>
            body {
              margin-top:  100px;
@@ -19,15 +19,17 @@
               display: block ;
             }
         </style>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script src="../showanswer.js"></script>
 	</head>
   <body>
     <h1>Data Science Test</h1>
-    <form action="../showanswer.php" method="post">
+    <form action="javascript:showanswer()">
       <p>There are three questions. Answer all questions and press Send.</p>
-  
+      
       <ol>
         <li>Which disclipline is not in Data Scientist?</li>
-  
+        
         <p>
           <input type="radio" name="question1" id="choice11" value="1">
           <label for="choice11">Data Engineering</label><br>
@@ -38,9 +40,9 @@
           <input type="radio" name="question1" id="choice14" value="4">
           <label for="choice14">Computer Graphic</label><br>
         </p>
-  
+        
         <li>Which skills and expertise should Data Scientists should have? (Choose all possible)</li>
-  
+        
         <p>
           <input type="checkbox" name="question2[]" id="choice21" value="1">
           <label for="choice21">Business/Domain</label><br>
