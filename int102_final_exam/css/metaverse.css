@@ -1,0 +1,124 @@
+@import url('http://fonts.googleapis.com/css?family=Arvo:700|Open+Sans:400italic,400');
+@import url('http://fast.fonts.com/cssapi/95b765fd-fae4-4f1b-8155-d8244914a5c6.css');
+
+body {
+    background: url("../images/metaverse.png") fixed no-repeat;
+    background-size: cover;
+    font-family: 'Open Sans', Frutiger, Arial, sans-serif;
+    margin: 0;
+}
+
+h1, h2 {
+    font-family: 'Adelle W01 Bold', 'Arvo', Georgia, serif;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #dd3b2a;
+}
+
+a:link, a:hover, a:visited, a:active {
+    font-weight: bold;
+    color: #dd3b2a;
+    text-decoration: none;
+}
+
+.header {
+    height: 492px;
+    background-color: rgba(255, 255, 255, 0.0);
+}
+
+.header h1 {
+    font-size: 5em;
+    text-align: center;
+    color: #fff;
+}
+
+.header p {
+    width: 45%;
+    float: right;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.main {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-top: 5px solid #dd3b2a;
+    padding-bottom: 2em;
+    overflow: auto;
+}
+
+.main > .content > .definition {
+    width: 45%;
+    padding: 20px;
+    float: left;
+}
+
+.main > .content > .howitwork {
+    width: 45%;
+    padding: 20px;
+    float: right;
+}
+
+.supporting {
+    background-color: #edf6ff;
+    border-top: 5px solid #cce4fb;
+    padding-bottom: 2em;
+    overflow: auto;
+}
+
+.supporting > .content {
+    background-image: url("../images/conference.png"), url("../images/avatar.png");
+    background-repeat: no-repeat;
+    background-position: 85% 15%, 10% 94%;
+    overflow: auto;
+}
+
+.supporting > .content > .whoplayer {
+    width: 45%;
+    padding: 20px;
+    float: left;
+}
+
+.supporting > .content > .willhappen {
+    width: 45%;
+    padding: 20px;
+    clear: left;
+    float: right;
+}
+
+.summary {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-top: 5px solid #cce4fb;
+    padding-bottom: 2em;
+    overflow: auto;
+}
+
+.summary > .content > .whydothis {
+    clear: both;
+    padding: 20px;
+}
+
+.summary > .content > .whydothis > h2 {
+    text-align: center;
+}
+
+.summary > .content > .whydothis > p {
+    width: 45%;
+    float: left;
+}
+
+.summary > .content > .whydothis > p + p {
+    width: 45%;
+    float: right;
+}
+
+body > div > div.content { /*div ตัวแรก คือ header main supporting summary*/
+    width: 80%;
+    margin: 0 auto; 
+}
+
+
+
